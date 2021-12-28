@@ -1,6 +1,7 @@
 @import 'vars';
 @import 'fonts';
 @import 'reset';
+@import 'libs';
 @import 'global';
 
 .header {
@@ -83,7 +84,6 @@
   }
 }
 
-
 .footer-top {
   display: flex;
   padding: 70px 0px;
@@ -141,16 +141,12 @@
     }
     &-btn {
       border: none;
-      width: 100px;
-      height: 40px;
       background-color: #a3bbc8;
       color: #fff;
-      padding: 0;
+      padding: 5px 20px;
       left: 0;
     }
   }
-
-  
 }
 
 .footer-bottom {
@@ -188,6 +184,86 @@
     }
   }
 }
+
+.top-slider {
+  background-color: #fcd7b6;
+  background-image: url('../images/before.png');
+  background-repeat: no-repeat;
+  background-position: 90% center;
+  &__item {
+    display: flex !important;
+    justify-content: space-between;
+    padding: 200px 0px;
+  }
+  &__title {
+    max-width: 470px;
+    color: #243f4d;
+    font-size: 72px;
+    line-height: 70px;
+    text-transform: uppercase;
+    @extend %Rubik-500;
+    margin-bottom: 40px;
+  }
+  &__text {
+    max-width: 370px;
+    color: #436372;
+    font-size: 18px;
+    @extend %Rubik-400;
+    margin-bottom: 40px;
+  }
+  &__link {
+    background-color: #a3bbc8;
+    color: #fff;
+    font-size: 15px;
+    line-height: 12px;
+    @extend %Rubik-500;
+    padding: 20px 100px 20px 30px;
+    position: relative;
+    &::before {
+      content: '';
+      height: 10px;
+      width: 24px;
+      background-image: url('../images/arrow.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      right: 17px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    li {
+      margin-right: 10px;
+      margin-top: -70px;
+      &:last-child {
+        margin-right: 0;
+      }
+      button {
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        height: 30px;
+        width: 30px;
+        color: #243f4d;
+        font-size: 10px;
+        line-height: 8px;
+        @extend %Rubik-500;
+        background-color: #fff;
+        border-radius: 50%;
+        opacity: 50%;
+      }
+      &.slick-active{
+        button {
+          opacity: 100%;
+        }
+      }
+    }
+  }
+}
+
 
 
 
